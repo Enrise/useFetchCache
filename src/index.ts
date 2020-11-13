@@ -7,13 +7,9 @@ import useSwr, {
 } from "swr";
 import { useEffect } from "react";
 
-const useFetchCache: UseFetchCacheType = (
-  key,
-  fetchFunction,
-  initialData,
-  config
-) => {
-  const response = useSwr(key, fetchFunction, { ...config, initialData });
+const useFetchCache: UseFetchCacheType = (key, fetchFunction, config) => {
+  const response = useSwr(key, fetchFunction, config);
+  const initialData = config?.initialData;
 
   useEffect(() => {
     if (!initialData) {
@@ -34,8 +30,7 @@ export default useFetchCache;
 type UseFetchCacheType<Data = any, Error = any> = (
   key: keyInterface,
   fetchFunction?: FetcherFunctionType<Data>,
-  initialData?: Data,
-  config?: Omit<ConfigInterface<Data, Error>, "initialData">
+  config?: ConfigInterface<Data, Error>
 ) => responseInterface<Data, Error>;
 
 type FetcherFunctionType<Data> =
