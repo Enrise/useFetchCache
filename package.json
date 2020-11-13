@@ -4,7 +4,6 @@
   "description": "A wrapper around useSwr that caches the initial data",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "lint": "eslint --ext .ts --ext .tsx src/",
     "prepublishOnly": "tsc",
     "build": "tsc"
@@ -25,15 +24,12 @@
   },
   "homepage": "https://github.com/Enrise/useFetchCache#readme",
   "devDependencies": {
-    "@types/jest": "^26.0.15",
     "@types/react": "^16.9.56",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "eslint": "^7.13.0",
-    "jest": "^26.6.3",
     "prettier": "^2.1.2",
     "prettier-eslint": "^11.0.0",
-    "ts-jest": "^26.4.4",
     "typescript": "^4.0.5"
   },
   "dependencies": {
