@@ -1,8 +1,8 @@
 {
   "name": "use-fetch-cache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A wrapper around useSwr that caches the initial data",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint --ext .ts --ext .tsx src/",
     "prepublishOnly": "tsc",
