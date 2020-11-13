@@ -1,0 +1,41 @@
+{
+  "name": "use-fetch-cache",
+  "version": "1.0.0",
+  "description": "A wrapper around useSwr that caches the initial data",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext .ts --ext .tsx src/",
+    "prepublishOnly": "tsc",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enrise/useFetchCache.git"
+  },
+  "keywords": [
+    "useswr",
+    "cache",
+    "swr"
+  ],
+  "author": "Henk-Jan van Voorthuijsen @ Enrise",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Enrise/useFetchCache/issues"
+  },
+  "homepage": "https://github.com/Enrise/useFetchCache#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.56",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "prettier": "^2.1.2",
+    "prettier-eslint": "^11.0.0",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "swr": "^0.3.8"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1"
+  }
+}

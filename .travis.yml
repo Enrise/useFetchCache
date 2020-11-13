@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - 12
+
+stages:
+  - test
+  - name: deploy
+    if: branch = master
+
+jobs:
+  include:
+    - stage: test
+      name: Linting
+      script:
+        - npm run lint
+
+    - stage: deploy
+      name: Deploy to npm
+      script: skip
+      deploy:
+        provider: npm
+        email: "npm@enrise.com"
+        api_key: $NPM_TOKEN
+        skip_cleanup: true
