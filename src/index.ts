@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import useSwr, {
   cache,
   ConfigInterface,
@@ -7,7 +9,11 @@ import useSwr, {
 } from "swr";
 import { useEffect } from "react";
 
-const useFetchCache: UseFetchCacheType = (key, fetchFunction, config) => {
+const useFetchCache = <Data = any, Error = any>(
+  key: keyInterface,
+  fetchFunction?: FetcherFunctionType<Data>,
+  config?: ConfigInterface<Data, Error>
+): responseInterface<Data, Error> => {
   const response = useSwr(key, fetchFunction, config);
   const initialData = config?.initialData;
 
@@ -24,14 +30,6 @@ const useFetchCache: UseFetchCacheType = (key, fetchFunction, config) => {
 };
 
 export default useFetchCache;
-
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-type UseFetchCacheType<Data = any, Error = any> = (
-  key: keyInterface,
-  fetchFunction?: FetcherFunctionType<Data>,
-  config?: ConfigInterface<Data, Error>
-) => responseInterface<Data, Error>;
 
 type FetcherFunctionType<Data> =
   | ((...args: any) => Data | Promise<Data>)
